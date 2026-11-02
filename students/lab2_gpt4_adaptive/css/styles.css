@@ -1,0 +1,1165 @@
+/* Подключение шрифтов */
+@font-face {
+  font-family: "ManropeBold";
+  src: url(../fonts/Manrope-Bold.ttf);
+}
+
+@font-face {
+  font-family: "Manrope";
+  src: url(../fonts/Manrope-Regular.ttf);
+}
+
+@font-face {
+  font-family: "ManropeLight";
+  src: url(../fonts/Manrope-Light.ttf);
+}
+
+/* Сброс базовых стилей */
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: "Manrope", sans-serif;
+  outline: none;
+}
+
+/* Общие стили для всего приложения */
+
+body {
+  background: #031b34;
+  padding: 0 2rem;
+  overflow: auto;
+}
+
+body.oh {
+  overflow: hidden;
+}
+
+.page {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+}
+
+a {
+  color: #fff;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+a,
+button {
+  cursor: pointer;
+  transition: all 0.3s ease-out;
+  -webkit-transition: all 0.3s ease-out;
+  -moz-transition: all 0.3s ease-out;
+  -ms-transition: all 0.3s ease-out;
+  -o-transition: all 0.3s ease-out;
+}
+
+a:hover,
+button:hover {
+  transition: all 0.3s ease-out;
+  -webkit-transition: all 0.3s ease-out;
+  -moz-transition: all 0.3s ease-out;
+  -ms-transition: all 0.3s ease-out;
+  -o-transition: all 0.3s ease-out;
+}
+
+button:hover {
+  background-color: #ae67fa;
+}
+
+ul li {
+  list-style-type: none;
+}
+
+h1 {
+  font-size: 60px;
+  color: #ae67fa;
+}
+
+h2 {
+  font-size: 34px;
+}
+
+h1,
+h2 {
+  font-family: "ManropeBold", sans-serif;
+  background: linear-gradient(90deg, #ae67fa 1.84%, #f49867 102.67%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+h3 {
+  font-family: "ManropeBold", sans-serif;
+  color: #fff;
+  font-size: 24px;
+}
+
+p {
+  font-size: 16px;
+  color: #fff;
+}
+
+.btn {
+  display: flex;
+  padding: 1rem 2rem;
+  background-color: transparent;
+  color: #fff;
+  border: none;
+  font-size: 16px;
+  border-radius: 5px;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  -ms-border-radius: 5px;
+  -o-border-radius: 5px;
+}
+
+.primary-btn {
+  background-color: #ff4820;
+}
+
+.section {
+  max-width: 1169px;
+  width: 100%;
+}
+
+.lined_header {
+  background: url("../assets/img/gradient_line.svg") no-repeat 0 0 transparent;
+  padding: 1rem 0;
+}
+
+/* Стили для Шапки */
+
+.header {
+  display: flex;
+  max-width: 1169px;
+  margin: 0 auto;
+  width: 100%;
+  padding: 2rem 0;
+  position: fixed;
+  justify-content: space-between;
+  align-items: center;
+  background: #031b34;
+}
+
+.header .header__logo .logo__link {
+  display: flex;
+  align-items: center;
+}
+
+.header .header__menu .menu {
+  display: flex;
+  column-gap: 2rem;
+}
+
+.header .header__right {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  column-gap: 2rem;
+  opacity: 1;
+  visibility: visible;
+  transition: all 0.3s ease;
+  -webkit-transition: all 0.3s ease;
+  -moz-transition: all 0.3s ease;
+  -ms-transition: all 0.3s ease;
+  -o-transition: all 0.3s ease;
+}
+
+.header .header__right.hidden {
+  opacity: 0;
+  transition: all 0.3s ease;
+  -webkit-transition: all 0.3s ease;
+  -moz-transition: all 0.3s ease;
+  -ms-transition: all 0.3s ease;
+  -o-transition: all 0.3s ease;
+  visibility: hidden;
+}
+
+.header .header__right .menu__close {
+  width: 38px;
+  height: 38px;
+}
+
+.header .header__right .menu__close.hidden {
+  display: none;
+}
+
+.header .header__menu .menu .menu__item a {
+  color: #fff;
+  border-bottom: 1px solid transparent;
+}
+
+.header .header__menu .menu .menu__item:hover a {
+  border-bottom-color: #fff;
+}
+
+.header .header__menu .menu .menu__item.active a {
+  color: #f49867;
+  border-bottom-color: #f49867;
+}
+
+.header .header__burger_menu {
+  display: flex;
+  flex-direction: column;
+  row-gap: 0.5rem;
+  cursor: pointer;
+}
+
+.header .header__burger_menu.hidden {
+  display: none;
+}
+
+.header .header__burger_menu .burger_menu__line,
+.header .header__right .menu__close .menu__line {
+  width: 43px;
+  height: 5px;
+  border-radius: 2px;
+  background: #fff;
+}
+
+.header .header__right .menu__close .menu__line:nth-child(1) {
+  position: relative;
+  top: 15px;
+  right: 4px;
+  transform: rotate(45deg);
+  -webkit-transform: rotate(45deg);
+  -moz-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  -o-transform: rotate(45deg);
+}
+
+.header .header__right .menu__close .menu__line:nth-child(2) {
+  position: relative;
+  top: 10px;
+  right: 3px;
+  transform: rotate(-45deg);
+  -webkit-transform: rotate(-45deg);
+  -moz-transform: rotate(-45deg);
+  -ms-transform: rotate(-45deg);
+  -o-transform: rotate(-45deg);
+}
+
+.header .cta_buttons {
+  display: flex;
+  column-gap: 1rem;
+}
+
+/* Стили для первого экрана (Хиро секция) */
+
+.hero_section {
+  display: flex;
+  justify-content: space-between;
+  column-gap: 1rem;
+  /* min-height: 60vh; */
+  margin: 14rem 0 3rem;
+}
+
+.hero_section .hero_section__left {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  row-gap: 3rem;
+  width: 75%;
+}
+
+.hero_section .hero_section__left .left__description {
+  color: #81afdd;
+}
+
+.hero_section .hero_section__left .left__cta_buttons {
+  display: flex;
+  width: 100%;
+}
+
+.hero_section .hero_section__left .left__cta_buttons input[type="text"] {
+  min-width: 250px;
+  width: 70%;
+  padding: 8px 32px;
+  border-radius: 4px 0 0 4px;
+  border: 1px solid #052d56;
+  border-bottom: none;
+  background-color: #052d56;
+}
+
+.hero_section .hero_section__left .left__cta_buttons .btn {
+  border-radius: 0 4px 4px 0;
+}
+
+.hero_section .hero_section__right {
+  height: 100%;
+}
+
+.hero_section .hero_section__right img {
+  width: 100%;
+}
+
+/* Секция брендов */
+
+.brands_section {
+  display: flex;
+  flex-wrap: wrap;
+  row-gap: 2rem;
+  justify-content: center;
+  align-items: center;
+  padding: 0 0 6rem 0;
+  column-gap: 3rem;
+}
+
+/* Что такое Chat GPT */
+
+.what_is_chatgpt_section {
+  display: flex;
+  flex-direction: column;
+  padding: 3rem;
+  margin: 6rem 0;
+  row-gap: 7rem;
+  background: url(../assets/img/what_is_gpt_3_bg.svg) no-repeat 0 0 / cover;
+}
+
+.what_is_chatgpt_section .what_is_chatgpt_section__top {
+  display: flex;
+  column-gap: 3rem;
+}
+
+.what_is_chatgpt_section .what_is_chatgpt_section__top .top__header {
+  flex: 30%;
+}
+
+.what_is_chatgpt_section .what_is_chatgpt_section__top .top__content {
+  flex: 65%;
+  color: #81afdd;
+  font-size: 14px;
+}
+
+.what_is_chatgpt_section .what_is_chatgpt_section__middle {
+  display: flex;
+  justify-content: space-between;
+  align-items: start;
+}
+
+.what_is_chatgpt_section .what_is_chatgpt_section__middle .middle__header {
+  width: 500px;
+}
+
+.what_is_chatgpt_section .what_is_chatgpt_section__middle a {
+  color: #ff8a71;
+  font-size: 16px;
+  border-bottom: 1px solid transparent;
+}
+
+.what_is_chatgpt_section .what_is_chatgpt_section__middle a:hover {
+  border-bottom: 1px solid #ff8a71;
+  transition: all 0.3s ease;
+  -webkit-transition: all 0.3s ease;
+  -moz-transition: all 0.3s ease;
+  -ms-transition: all 0.3s ease;
+  -o-transition: all 0.3s ease;
+}
+
+.what_is_chatgpt_section .what_is_chatgpt_section__bottom {
+  display: flex;
+  justify-content: space-between;
+  align-items: start;
+  column-gap: 2rem;
+}
+
+.what_is_chatgpt_section .what_is_chatgpt_section__bottom .bottom__container {
+  display: flex;
+  flex-direction: column;
+  row-gap: 2rem;
+}
+
+.what_is_chatgpt_section
+  .what_is_chatgpt_section__bottom
+  .bottom__container
+  .container__content {
+  color: #81afdd;
+  font-size: 14px;
+  line-height: 1.8;
+}
+
+/* Будущее наступило */
+
+.future_here {
+  display: flex;
+  column-gap: 6rem;
+  margin: 6rem 0 2rem;
+}
+
+.future_here .future_here__left {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  row-gap: 2rem;
+  flex: 2;
+}
+
+/* .future_here .future_here__left .left__header {
+} */
+
+.future_here .future_here__left .left__cta {
+  color: #f49867;
+  border-bottom: 1px solid transparent;
+}
+
+.future_here .future_here__left a:hover {
+  border-bottom: 1px solid #f49867;
+  transition: all 0.3s ease;
+  -webkit-transition: all 0.3s ease;
+  -moz-transition: all 0.3s ease;
+  -ms-transition: all 0.3s ease;
+  -o-transition: all 0.3s ease;
+}
+
+.future_here .future_here__right {
+  flex: 3;
+  display: flex;
+  flex-direction: column;
+  row-gap: 3rem;
+}
+
+.future_here .future_here__right .right__container {
+  display: flex;
+  justify-content: space-between;
+}
+
+.future_here .future_here__right .right__container .container__header {
+  width: 35%;
+}
+
+.future_here .future_here__right .right__container .container__content {
+  width: 55%;
+  color: #81afdd;
+}
+
+/* стили для 4 слайда */
+/* левая сторона с женщиной */
+.beyond_expectations {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-end;
+  gap: 2rem;
+  margin-top: 45px;
+}
+
+.beyond_expectations .expectations_section_left {
+  flex: 1 1 0;
+  max-width: 50%;
+  min-width: 0;
+  display: flex;
+  padding-left: 36px
+}
+
+.beyond_expectations .expectations_section_left img {
+  max-width: 100%;
+  height: auto;
+}
+
+/* правая сторона с текстом */
+
+.beyond_expectations .beyond_expectations_right {
+    flex: 1 1 0;
+    min-width: 0;
+    max-width: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 1rem;
+    margin-bottom: 35px;
+    padding-right: 36px;
+}
+
+.beyond_expectations .beyond_expectations_right .right_text {
+  color: #81afdd;
+  font-size: 16px;
+  line-height: 30px;
+}
+
+.beyond_expectations .beyond_expectations_right .right_cta {
+  color: #81afdd;
+}
+
+.beyond_expectations .beyond_expectations_right .right_buttom_cta {
+  color: #f49867;
+}
+
+/* центральная плашка */
+.beyond_expectations .beyond_expectations_center {
+  width: 100%;
+  max-width: 1172px;
+  min-height: 172px;
+  background: linear-gradient(90deg, #ae67fa 1.84%, #f49867 102.67%);
+  margin-top: 154px;
+  margin-bottom: 0;
+  display: flex;
+  justify-content: space-between;
+  padding-left: 44px;
+  padding-right: 36px;
+  box-sizing: border-box;
+  border-radius: 10px;
+}
+
+.center_container {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  position: relative;  
+}
+
+.cta_buttons_start.btn {
+  background-color: #000000;
+  font-size: 18px;
+  line-height: 30px;
+  padding: 0.75rem 2.5rem;
+  border: none;
+  border-radius: 40px;
+  width: 190px;
+  justify-content: center;
+  font-family: "ManropeBold", sans-serif;
+}
+
+.beyond_expectations_center .cta_buttons {
+  display: flex;
+  align-self: center;
+}
+
+.beyond_expectations_center .center_cta {
+  margin-top: 23px;
+  color: #000000;
+  font-size: 12px;
+  font-weight: 500;
+  line-height: 30px;
+}
+
+.beyond_expectations_center .container_header {
+  color: #000000;
+  font-weight: 800;
+  line-height: 35px;
+}
+
+/* пошли следующие сутки, пишу 5 слайд */
+.alot_happens {
+  padding-top: 0;
+  margin: 154px 0 6rem;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  row-gap: 115px;
+}
+
+.alot_happens h2 {
+  font-weight: 800;
+  font-size: 62px;
+  line-height: 75px;
+  max-width: 750px;
+  font-family: "ManropeBold", sans-serif;
+  letter-spacing: -2px;
+}
+
+.alot_happens_table {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 2rem;
+  width: 100%;
+}
+
+.blog_card_big {
+  grid-row: span 2;
+  display: flex;
+  width: 100%;
+  max-width: 420px;
+  flex-direction: column;
+  background-color: #042c54;
+}
+
+.blog_card_big img {
+  width: 100%;
+  object-fit: cover;
+}
+
+.blog_card_small img {
+  width: 100%;
+  height: 150px;
+  object-fit: cover;
+}
+
+.blog_card_small {
+  display: flex;
+  flex-direction: column;
+  background-color: #042c54;
+}
+
+.blog_card_content {
+  display: flex;
+  flex-direction: column;
+  padding: 1.5rem;
+  flex: 1;
+}
+
+.blog_card_date {
+  color: #81afdd;
+  font-size: 12px;
+  margin-bottom: 1rem;
+}
+
+.blog_card_title {
+  font-size: 19px;
+  line-height: 30px;
+  font-family: "ManropeBold", sans-serif;
+  margin-bottom: 2rem;
+  flex: 1;
+}
+
+.big_blog_card_title {
+    font-size: 25px;
+    line-height: 30px;
+    font-family: "ManropeBold", sans-serif;
+    margin-bottom: 2rem;
+    flex: 1;
+}
+
+.blog_card_link {
+  color: #81afdd;
+  font-size: 12px;
+}
+
+
+/* 6 слааааайд */
+.make_a_step {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  width: 100%;
+  margin: 6rem auto 0;
+  box-sizing: border-box;
+  padding: 0 0px;
+}
+
+.make_a_step h2 {
+  max-width: 850px;
+  font-size: 62px;
+  line-height: 75px;
+  font-family: "ManropeBold", sans-serif;
+  margin: 0 0 3rem;
+}
+
+.make_a_step_button {
+  border: 1px solid #ffffff;
+  padding: 1.2rem 4rem;
+  font-family: "ManropeBold", sans-serif;
+  font-size: 18px;
+  margin-bottom: 6rem;
+  opacity: 60%;
+}
+
+.links_about_contacs_top {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+  box-sizing: border-box;
+}
+
+.footer_top {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  align-items: start;
+  width: 100%;
+  column-gap: 6rem;
+  box-sizing: border-box;
+}
+
+.footer_brand {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  row-gap: 1rem;
+  width: 100%;
+  max-width: 300px;
+  margin: 0;
+  justify-self: start;
+  text-align: left;
+}
+
+.gpt3_logo {
+  display: block;
+  width: 118px;
+  height: auto;
+  margin: 0;
+}
+
+.footer_address, .footer_text, .footer_rights {
+  font-size: 12px;
+  line-height: 1.6;
+  margin: 0;
+  opacity: 60%;
+}
+
+.footer_columns {
+  display: flex;
+  gap: 7rem;
+  justify-content: flex-end;
+  margin-left: auto;
+  width: 837px;
+}
+
+.footer_column_left, .footer_column_center, .footer_column_right {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  row-gap: 1.5rem;
+  min-width: 130px;
+}
+
+.footer_header {
+  font-size: 14px;
+  font-family: "ManropeBold", sans-serif;
+  margin: 0;
+}
+
+.footer_list {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  row-gap: 0.8rem;
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+
+.footer_list li a {
+  font-size: 12px;
+  opacity: 60%;
+}
+
+.footer_bottom {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  padding: 0.25rem 0;
+  box-sizing: border-box;
+}
+
+.footer_copyright {
+  margin-top: 105px;
+  opacity: 60%;
+  font-size: 12px;
+}
+
+/* Медиа запросы для адаптива */
+
+@media screen and (max-width: 1024px) {
+  .page {
+    align-content: center;
+  }
+
+  .header {
+    padding: 2rem;
+  }
+
+  .header .header__logo .logo__link img {
+    width: 200%;
+  }
+
+  .header .header__right {
+    flex-direction: column-reverse;
+    justify-content: center;
+    align-items: center;
+    row-gap: 53px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    width: 100%;
+    height: 100vh;
+    z-index: 9999;
+    background: #031b34;
+  }
+
+  .header .header__menu {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+  }
+
+  .header .header__menu .menu {
+    flex-direction: column;
+    align-items: center;
+    row-gap: 1rem;
+  }
+
+  .header .header__menu .menu__close {
+    position: absolute;
+    right: -100px;
+    top: -100px;
+  }
+
+  .header .header__menu .menu .menu__item a {
+    font-size: 48px;
+  }
+
+  .hero_section {
+    flex-direction: column;
+    justify-content: center;
+    column-gap: 0;
+    /* margin: 0; */
+    width: 90%;
+  }
+
+  .hero_section .hero_section__left {
+    width: 100%;
+    text-align: center;
+  }
+
+  .hero_section .hero_section__right {
+    display: flex;
+    justify-content: center;
+  }
+
+  .hero_section .hero_section__right img {
+    width: 60%;
+  }
+
+  .hero_section .hero_section__left .left__cta_buttons {
+    justify-content: center;
+  }
+
+  .what_is_chatgpt_section {
+    row-gap: 4rem;
+  }
+
+  .what_is_chatgpt_section .what_is_chatgpt_section__middle {
+    flex-direction: column;
+    row-gap: 1rem;
+  }
+
+  .what_is_chatgpt_section .what_is_chatgpt_section__bottom .bottom__container {
+    row-gap: 0;
+  }
+
+  .future_here {
+    column-gap: 0;
+    flex-direction: column;
+    row-gap: 4rem;
+  }
+
+  .future_here .future_here__left {
+    row-gap: 1rem;
+  }
+
+  /* мои добавления для страниц 1024 */
+
+    .beyond_expectations .beyond_expectations_center {
+    margin-top: 100px;
+  }
+
+  .footer_columns {
+    width: 100%;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    gap: 3rem;
+  }
+  
+  .footer_top {
+    column-gap: 3rem;
+  }
+}
+
+@media screen and (max-width: 766px) {
+  p {
+    font-size: 14px;
+    line-height: 1.5;
+  }
+  h1 {
+    font-size: 46px;
+  }
+
+  h2 {
+    font-size: 27px;
+  }
+
+  h3 {
+    font-size: 19px;
+  }
+
+  .hero_section {
+    width: 100%;
+  }
+
+  .brands_section {
+    margin-top: -15px;
+    padding-bottom: 0;
+  }
+
+  .what_is_chatgpt_section .what_is_chatgpt_section__top {
+    flex-direction: column;
+  }
+
+  .hero_section .hero_section__right img {
+    width: 85%;
+  }
+
+  .what_is_chatgpt_section .what_is_chatgpt_section__middle .middle__header {
+    width: auto;
+  }
+
+  .what_is_chatgpt_section .what_is_chatgpt_section__bottom {
+    flex-direction: column;
+  }
+
+  .what_is_chatgpt_section .what_is_chatgpt_section__bottom {
+    row-gap: 2rem;
+  }
+
+  .what_is_chatgpt_section {
+    row-gap: 3rem;
+  }
+
+  .what_is_chatgpt_section {
+    margin: 6rem 0 0;
+  }
+
+  .what_is_chatgpt_section
+    .what_is_chatgpt_section__bottom
+    .bottom__container
+    .container__content {
+    line-height: 1.5;
+  }
+
+  /* мои добавления 766 */
+  /* 4 слайд */
+  .beyond_expectations .expectations_section_left,
+  .beyond_expectations .beyond_expectations_right {
+    flex: 1 1 100%;
+    max-width: 100%;
+  }
+
+  .beyond_expectations .expectations_section_left {
+  padding-left: 0;
+  justify-content: flex-start;
+  margin-bottom: 2rem;
+  }
+
+  .beyond_expectations .expectations_section_left img {
+    max-width: 70%;
+  }
+  
+  /* Центральная плашечка */
+  .beyond_expectations .beyond_expectations_center {
+    flex-direction: row; 
+    align-items: center;
+    justify-content: space-between;
+    padding: 1.5rem;
+    row-gap: 0;
+    column-gap: 1rem;
+    min-height: auto;
+    margin-top: 30px;;
+  }
+
+  .beyond_expectations_center .center_container {
+    flex: 1;
+    padding-right: 1rem;
+    justify-content: center;
+  }
+
+  .beyond_expectations_center .cta_buttons {
+    align-self: center;
+  }
+
+  .beyond_expectations_center .center_cta {
+    margin-top: 0; 
+  }
+
+  .beyond_expectations_center .container_header {
+    font-size: 18px; 
+    line-height: 1.4;
+  }
+
+  /* 5 слайд */
+  .alot_happens h2 {
+    font-size: 38px; 
+    line-height: 48px;
+    letter-spacing: -1px;
+  }
+
+  .alot_happens_table {
+    gap: 1rem;
+  }
+
+  .blog_card_title {
+    font-size: 16px;
+    line-height: 22px;
+    margin-bottom: 1rem;
+  }
+
+  .big_blog_card_title {
+    font-size: 18px;
+    line-height: 24px;
+    margin-bottom: 1rem;
+  }
+
+
+  .blog_card_big {
+    grid-row: auto;
+    width: 100%;
+  }
+
+  .alot_happens {
+    margin-top: 80px;
+    row-gap: 60px;
+    margin-bottom: 3rem;
+  }
+  
+  /* 6 слад */
+  .make_a_step h2 {
+    font-size: 48px; 
+    line-height: 58px;
+    letter-spacing: -2px;
+  }
+
+  .make_a_step {
+    margin-top: 3rem;
+  }
+
+  .make_a_step_button {
+  font-size: 14px;
+  margin-bottom: 3rem;
+  }
+
+  .footer_top {
+    grid-template-columns: 1fr;
+    row-gap: 3rem;
+  }
+
+  .footer_columns {
+    gap: 2rem;
+  }
+}
+
+@media screen and (max-width: 765px) {
+  a {
+    font-size: 12px;
+  }
+
+  p {
+    font-size: 12px;
+  }
+
+  h1 {
+    font-size: 25px;
+  }
+
+  h2 {
+    font-size: 19px;
+  }
+
+  .hero_section .hero_section__left .left__cta_buttons input[type="text"] {
+    min-width: auto;
+  }
+
+  .future_here {
+    row-gap: 3rem;
+  }
+
+  .future_here .future_here__right .right__container {
+    flex-direction: column;
+  }
+
+  .future_here .future_here__right .right__container .container__header {
+    width: 100%;
+  }
+
+  .future_here .future_here__right .right__container .container__content {
+    width: 100%;
+  }
+
+  .future_here .future_here__right {
+    row-gap: 2rem;
+  }
+
+  /* мои добавки 765 */ 
+
+  /* 4 слайд */
+  .beyond_expectations .beyond_expectations_right .right_text {
+    font-size: 12px;
+    line-height: 22px;
+  }
+
+  .beyond_expectations .beyond_expectations_center {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 1.5rem;
+  }
+
+  .beyond_expectations_center .center_container {
+    padding-right: 0;
+    margin-bottom: 1.5rem;
+  }
+
+  .beyond_expectations_center .container_header {
+    font-size: 16px;
+    line-height: 1.4;
+    margin-bottom: 1.5rem;
+  }
+
+  .beyond_expectations_center .cta_buttons {
+    align-self: flex-start;
+    width: 100%;
+  }
+
+  .cta_buttons_start.btn {
+    width: 100%;
+  }
+
+  /* 5 слайд */
+
+  .alot_happens h2 {
+    font-size: 28px; 
+    line-height: 38px;
+    letter-spacing: -1px;
+  }
+
+  .alot_happens_table {
+    grid-template-columns: 1fr;
+  }
+
+  /* 6 слайд */
+  .make_a_step_button {
+    padding: 1rem 2rem;
+    font-size: 16px;
+    width: 100%;
+    box-sizing: border-box;
+  }
+  .footer_columns {
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+  .footer_copyright {
+    margin-top: 40px;
+  }
+  .cta_buttons_start.btn {
+    width: 100%;
+  }
+
+  .make_a_step h2 {
+    font-size: 28px; 
+    line-height: 38px;
+    letter-spacing: -1px;
+  }
+
+  .footer_columns {
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 2rem;
+  }
+}
