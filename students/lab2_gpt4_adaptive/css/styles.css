@@ -873,6 +873,14 @@ p {
   .footer_top {
     column-gap: 3rem;
   }
+
+  /* ночное изменение 5 слайда для одной плашки сверху и 4х под ней по 2 */
+  /* p.s. скоро с банной горы сдавать буду (тьфу, тьфу, тьфу) */
+  .alot_happens_table {
+    display: grid;
+    grid-template-columns: 1fr 1fr; 
+    gap: 1.5rem;
+  }
 }
 
 @media screen and (max-width: 766px) {
@@ -1134,19 +1142,23 @@ p {
   }
 
   /* 6 слайд */
+
   .make_a_step_button {
     padding: 1rem 2rem;
     font-size: 16px;
     width: 100%;
     box-sizing: border-box;
   }
+
   .footer_columns {
     flex-direction: column;
     gap: 1.5rem;
   }
+
   .footer_copyright {
     margin-top: 40px;
   }
+
   .cta_buttons_start.btn {
     width: 100%;
   }
@@ -1154,12 +1166,25 @@ p {
   .make_a_step h2 {
     font-size: 28px; 
     line-height: 38px;
-    letter-spacing: -1px;
+    letter-spacing: -2px;
+  }
+  
+  /* измененияяяя */
+  .footer_columns {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 1rem;
+    width: 100%;
+  }
+  /* я вообще не знаю,, как тут красиво сделать лучше, но теперь мне очень нравится  */
+  .footer_column_left, 
+  .footer_column_center, 
+  .footer_column_right {
+    min-width: 0; 
+    align-items: flex-start;
   }
 
-  .footer_columns {
-    flex-wrap: wrap;
-    justify-content: space-between;
-    gap: 2rem;
+  .footer_brand {
+    align-items: center;
   }
 }
